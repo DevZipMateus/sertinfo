@@ -161,6 +161,25 @@ html {
   }
 }
 
+/* Animações de slide para o novo layout de serviços */
+.animate-slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+.animate-slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+}
+
+.animate-slide-in-left.visible,
+.animate-slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* Service Card Hover Animation */
 .service-card {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);

@@ -59,54 +59,12 @@ const ServicesSection = () => {
     }
   ];
   
-  const techImages = [
-    {
-      src: "/lovable-uploads/9c142ae0-c514-4227-a17c-124aff48e838.png",
-      alt: "Equipe de tecnologia em reunião analisando dados",
-      caption: "Consultoria estratégica para otimização de processos de TI"
-    },
-    {
-      src: "/lovable-uploads/4cde55c3-d64c-4d37-b682-ee7a11b582d7.png",
-      alt: "Código de programação em tela",
-      caption: "Desenvolvimento de soluções personalizadas"
-    },
-    {
-      src: "/lovable-uploads/f3b8f6b5-87f1-475c-ba3d-75a1775e61df.png",
-      alt: "Dashboard de análise de dados",
-      caption: "Monitoramento e análise de desempenho de sistemas"
-    },
-    {
-      src: "/lovable-uploads/2215bb0c-0261-4ee5-83fa-95e7d945318f.png",
-      alt: "Infraestrutura de rede com cabos de fibra",
-      caption: "Infraestrutura de redes de alta performance"
-    }
-  ];
+  // Imagem de fundo para a seção de serviços
+  const techImage = "/lovable-uploads/c48a2e9c-3c62-4ede-a04d-6f12c3f9da60.png";
   
   return (
-    <section id="services" ref={sectionRef} className="section-padding bg-gradient-to-b from-gray-50 to-white">
+    <section id="services" ref={sectionRef} className="section-padding relative bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto">
-        {/* Banner image */}
-        <div className="mb-12 rounded-xl overflow-hidden shadow-xl animate-on-scroll">
-          <AspectRatio ratio={16/5} className="bg-gray-100">
-            <div className="relative w-full h-full overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent z-10"></div>
-              <img 
-                src="/lovable-uploads/b4a47583-54bb-4862-8ddb-715085bb1758.png" 
-                alt="Infraestrutura de TI" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-center z-20">
-                <div className="container mx-auto px-6">
-                  <div className="max-w-lg text-white">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2">Infraestrutura completa para sua empresa</h3>
-                    <p className="text-white/90">Soluções integradas em tecnologia da informação</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AspectRatio>
-        </div>
-
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 animate-on-scroll">
             Nossos Serviços
@@ -120,32 +78,58 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Modern Tech Images Section */}
-        <div className="mb-16 space-y-12 animate-on-scroll">
-          {techImages.map((image, index) => (
-            <div 
-              key={index} 
-              className={`overflow-hidden rounded-xl shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${
-                index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
-              }`}
+        {/* Seção de Hero inspirada na imagem de referência */}
+        <div className="flex flex-col md:flex-row gap-8 overflow-hidden rounded-xl shadow-xl mb-16">
+          {/* Coluna da esquerda - Texto e serviços */}
+          <div className="w-full md:w-2/5 bg-primary/90 text-white p-8 md:p-12 flex flex-col justify-center animate-slide-in-left">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              A SERTINFO cria e implementa soluções que buscam:
+            </h3>
+            <p className="mb-8 text-white/90">
+              A otimização dos processos de tecnologia, aliando facilidade de operação, inteligência e alta conectividade.
+            </p>
+            <a 
+              href="https://wa.me/5500000000000?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20serviços%20de%20TI"
+              className="inline-block bg-white text-primary px-6 py-3 rounded-md font-medium transition-all hover:bg-white/90 w-fit"
             >
-              <div className="relative">
-                <AspectRatio ratio={21/9} className="bg-gray-100">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <p className="text-xl font-medium">{image.caption}</p>
-                  </div>
-                </AspectRatio>
-              </div>
+              Entrar em contato
+            </a>
+          </div>
+          
+          {/* Coluna da direita - Grid com 4 imagens */}
+          <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-1 animate-slide-in-right">
+            <div className="relative bg-black overflow-hidden">
+              <img 
+                src="/lovable-uploads/9c142ae0-c514-4227-a17c-124aff48e838.png" 
+                alt="Consultoria estratégica" 
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity hover:scale-105 duration-500"
+              />
             </div>
-          ))}
+            <div className="relative bg-black overflow-hidden">
+              <img 
+                src="/lovable-uploads/4cde55c3-d64c-4d37-b682-ee7a11b582d7.png" 
+                alt="Desenvolvimento de software" 
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity hover:scale-105 duration-500"
+              />
+            </div>
+            <div className="relative bg-black overflow-hidden">
+              <img 
+                src="/lovable-uploads/f3b8f6b5-87f1-475c-ba3d-75a1775e61df.png" 
+                alt="Analytics e monitoramento" 
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity hover:scale-105 duration-500"
+              />
+            </div>
+            <div className="relative bg-black overflow-hidden">
+              <img 
+                src="/lovable-uploads/2215bb0c-0261-4ee5-83fa-95e7d945318f.png" 
+                alt="Infraestrutura de rede" 
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity hover:scale-105 duration-500"
+              />
+            </div>
+          </div>
         </div>
 
+        {/* Cards de serviços */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard 
