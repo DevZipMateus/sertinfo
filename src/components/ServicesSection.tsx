@@ -59,6 +59,29 @@ const ServicesSection = () => {
     }
   ];
   
+  const techImages = [
+    {
+      src: "/lovable-uploads/9c142ae0-c514-4227-a17c-124aff48e838.png",
+      alt: "Equipe de tecnologia em reunião analisando dados",
+      caption: "Consultoria estratégica para otimização de processos de TI"
+    },
+    {
+      src: "/lovable-uploads/4cde55c3-d64c-4d37-b682-ee7a11b582d7.png",
+      alt: "Código de programação em tela",
+      caption: "Desenvolvimento de soluções personalizadas"
+    },
+    {
+      src: "/lovable-uploads/f3b8f6b5-87f1-475c-ba3d-75a1775e61df.png",
+      alt: "Dashboard de análise de dados",
+      caption: "Monitoramento e análise de desempenho de sistemas"
+    },
+    {
+      src: "/lovable-uploads/2215bb0c-0261-4ee5-83fa-95e7d945318f.png",
+      alt: "Infraestrutura de rede com cabos de fibra",
+      caption: "Infraestrutura de redes de alta performance"
+    }
+  ];
+  
   return (
     <section id="services" ref={sectionRef} className="section-padding bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto">
@@ -95,6 +118,32 @@ const ServicesSection = () => {
             Oferecemos uma gama completa de serviços de tecnologia e infraestrutura para atender às necessidades 
             específicas do seu negócio.
           </p>
+        </div>
+
+        {/* Modern Tech Images Section */}
+        <div className="mb-16 space-y-12 animate-on-scroll">
+          {techImages.map((image, index) => (
+            <div 
+              key={index} 
+              className={`overflow-hidden rounded-xl shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${
+                index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
+              }`}
+            >
+              <div className="relative">
+                <AspectRatio ratio={21/9} className="bg-gray-100">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <p className="text-xl font-medium">{image.caption}</p>
+                  </div>
+                </AspectRatio>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

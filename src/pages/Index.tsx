@@ -34,6 +34,28 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Add classes for slide-in animations
+  useEffect(() => {
+    const slideInElements = document.querySelectorAll('.animate-slide-in-left, .animate-slide-in-right');
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    
+    slideInElements.forEach((el) => observer.observe(el));
+    
+    return () => {
+      slideInElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div className="overflow-x-hidden">
       <Helmet>
