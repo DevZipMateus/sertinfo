@@ -9,6 +9,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import EgestorERP from '@/components/EgestorERP';
 import { Helmet } from 'react-helmet';
 
 const Index = () => {
@@ -50,6 +51,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <EgestorERP />
       <PlansSection />
       <TestimonialsSection />
       <ContactSection />
