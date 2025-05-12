@@ -1,17 +1,13 @@
-
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, FileText } from 'lucide-react';
-
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     if (sectionRef.current) {
       sectionRef.current.classList.add('animate-fade-in');
     }
   }, []);
-  
   const scrollToNextSection = () => {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
@@ -20,7 +16,6 @@ const HeroSection = () => {
       });
     }
   };
-  
   return <section id="hero" ref={sectionRef} className="relative min-h-screen flex items-center justify-center pt-16">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
@@ -31,11 +26,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6 flex justify-center animate-slide-up [animation-delay:300ms]">
-            <img 
-              src="/lovable-uploads/7a87fc93-df6e-408e-bbb1-cf08ba1ef75b.png" 
-              alt="Sertinfo Logo" 
-              className="h-24 md:h-32 w-auto"
-            />
+            <img alt="Sertinfo Logo" className="h-24 md:h-32 w-auto" src="/lovable-uploads/999f2870-2f05-4454-89a9-11bcc36a745c.png" />
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight animate-slide-up [animation-delay:500ms]">
@@ -69,5 +60,4 @@ const HeroSection = () => {
       </div>
     </section>;
 };
-
 export default HeroSection;
