@@ -1,8 +1,10 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, FileText } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
@@ -22,6 +24,7 @@ const Header = () => {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-background/95 backdrop-blur-md shadow-nav' : 'py-5 bg-transparent'}`}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
@@ -69,10 +72,12 @@ const Header = () => {
       </div>
     </header>;
 };
+
 interface NavLinksProps {
   mobile?: boolean;
   onClick?: () => void;
 }
+
 const NavLinks = ({
   mobile,
   onClick
@@ -90,12 +95,10 @@ const NavLinks = ({
     name: 'Soluções',
     href: '#plans'
   }, {
-    name: 'Depoimentos',
-    href: '#testimonials'
-  }, {
     name: 'Contato',
     href: '#contact'
   }];
+
   return <>
       {links.map(link => <a key={link.name} href={link.href} className={`font-medium transition-all duration-300 px-3 py-2 rounded-md
             ${mobile ? 'text-xl text-foreground hover:text-primary mb-2 w-full text-center py-3' : 'text-foreground/80 hover:text-primary hover:bg-secondary/50'}`} onClick={onClick}>
@@ -103,4 +106,5 @@ const NavLinks = ({
         </a>)}
     </>;
 };
+
 export default Header;
