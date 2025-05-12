@@ -2,38 +2,58 @@
 import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const testimonials = [
   {
-    name: "Carlos Silva",
-    company: "Silva Tech Solutions",
-    image: "/placeholder.svg",
-    text: "A Harmônica Contabilidade transformou completamente nossa gestão financeira. Além da excelência técnica, o atendimento personalizado nos deu confiança para tomar decisões estratégicas."
+    name: "Grasiele Cersosimo",
+    company: "2 avaliações",
+    image: "/lovable-uploads/9291648b-e742-414a-936a-46fd9e4b2583.png",
+    text: "Excelente profissionais. Atendimento nota 1000",
+    time: "um ano atrás"
   },
   {
-    name: "Ana Oliveira",
-    company: "Boutique Elegance",
-    image: "/placeholder.svg",
-    text: "Desde que começamos a trabalhar com a Harmônica, nossa carga tributária reduziu significativamente. A equipe é extremamente proativa e sempre nos orienta sobre as melhores práticas fiscais."
+    name: "Natielle Brito",
+    company: "1 avaliação",
+    image: "/lovable-uploads/ba2091ca-6180-44e3-9b15-f71e19b45fad.png",
+    text: "Extremamente atenciosos e responsáveis com os clientes. Além de agilidade e qualidade. Obrigada pelo atendimento.",
+    time: "um ano atrás"
   },
   {
-    name: "Roberto Mendes",
-    company: "Construmendes Ltda",
-    image: "/placeholder.svg",
-    text: "Os serviços contábeis da Harmônica são de altíssima qualidade. Trouxeram organização e tranquilidade para nossa empresa, além de identificarem oportunidades de economia que não enxergávamos."
+    name: "Elaine Letícia",
+    company: "1 avaliação",
+    image: "/lovable-uploads/f4df3b3d-f137-40da-8bc0-4538158df92a.png",
+    text: "Qualidade em atendimento e serviços, excelente! Indico para todos!!!",
+    time: "um ano atrás"
   },
   {
-    name: "Lúcia Ferreira",
-    company: "Café & Bistrô Aroma",
-    image: "/placeholder.svg",
-    text: "Como empreendedora, precisava de um parceiro contábil que entendesse os desafios de um pequeno negócio. A Harmônica superou todas as expectativas com seu atendimento humanizado."
+    name: "THERJ IND COM LTDA",
+    company: "Local Guide • 42 avaliações",
+    image: "/lovable-uploads/25a37fad-1b10-49ea-9170-f1cbb16e445c.png",
+    text: "Excelente empresa, prestativos, coerentes e honestos, pontuais em tudo que foi negociado, precisamos de mais empresas como a SERTINFO comércio e serviços no mercado",
+    time: "um mês atrás"
   }
 ];
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState<{[key: string]: boolean}>({});
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const preloadImages = () => {
+      testimonials.forEach((testimonial) => {
+        const img = new Image();
+        img.src = testimonial.image;
+        img.onload = () => setImagesLoaded(prev => ({ ...prev, [testimonial.image]: true }));
+        img.onerror = () => setImagesLoaded(prev => ({ ...prev, [testimonial.image]: true })); // Consider it loaded even if error
+      });
+    };
+
+    preloadImages();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -104,7 +124,11 @@ const TestimonialsSection = () => {
           <div className="animate-on-scroll">
             <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 testimonial-slider transform`}>
               {getVisibleTestimonials().map((testimonial, index) => (
-                <TestimonialCard key={index} testimonial={testimonial} />
+                <TestimonialCard 
+                  key={index} 
+                  testimonial={testimonial} 
+                  isLoaded={Boolean(imagesLoaded[testimonial.image])} 
+                />
               ))}
             </div>
           </div>
@@ -129,7 +153,9 @@ const TestimonialsSection = () => {
                     setTimeout(() => setIsTransitioning(false), 600);
                   }}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    currentIndex === index ? 'bg-primary' : 'bg-gray-300'
+                    currentIndex === index || 
+                    (index === (currentIndex + 1) % testimonials.length && window.innerWidth >= 768) 
+                      ? 'bg-primary' : 'bg-gray-300'
                   }`}
                   aria-label={`Ir para depoimento ${index + 1}`}
                 />
@@ -156,10 +182,12 @@ interface TestimonialCardProps {
     company: string;
     image: string;
     text: string;
+    time: string;
   };
+  isLoaded: boolean;
 }
 
-const TestimonialCard = ({ testimonial }: TestimonialCardProps) => (
+const TestimonialCard = ({ testimonial, isLoaded }: TestimonialCardProps) => (
   <Card className="border border-border/50 shadow-md service-card h-full">
     <CardContent className="p-8 h-full flex flex-col">
       <div className="mb-6 text-primary">
@@ -169,16 +197,26 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => (
       <p className="text-foreground mb-6 flex-grow">{testimonial.text}</p>
       
       <div className="flex items-center">
-        <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-          <img 
-            src={testimonial.image} 
-            alt={testimonial.name} 
-            className="w-full h-full object-cover"
-          />
-        </div>
+        {!isLoaded ? (
+          <Skeleton className="w-12 h-12 rounded-full mr-4" />
+        ) : (
+          <Avatar className="h-12 w-12 mr-4">
+            <AvatarImage src={testimonial.image} alt={testimonial.name} className="object-cover" />
+            <AvatarFallback>{testimonial.name.substring(0, 2)}</AvatarFallback>
+          </Avatar>
+        )}
         <div>
           <h4 className="font-bold text-foreground">{testimonial.name}</h4>
-          <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+          <div className="flex items-center space-x-1">
+            <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+            <span className="text-sm text-muted-foreground">•</span>
+            <div className="flex">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star} className="text-yellow-400">★</span>
+              ))}
+            </div>
+          </div>
+          <p className="text-xs text-muted-foreground">{testimonial.time}</p>
         </div>
       </div>
     </CardContent>
