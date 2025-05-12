@@ -45,6 +45,11 @@ function useSidebar() {
   return context
 }
 
+// This is a separate function component that can safely use React hooks
+const TooltipProviderWrapper = ({ children }: { children: React.ReactNode }) => {
+  return <>{children}</>
+}
+
 const SidebarProvider = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> & {
@@ -554,6 +559,7 @@ const SidebarMenuButton = React.forwardRef<
     const Comp = asChild ? Slot : "button"
     const { isMobile, state } = useSidebar()
 
+    // Create a button element without tooltip
     const button = (
       <Comp
         ref={ref}
@@ -569,12 +575,10 @@ const SidebarMenuButton = React.forwardRef<
       return button
     }
 
-    if (typeof tooltip === "string") {
-      tooltip = {
-        children: tooltip,
-      }
-    }
+    // Use this component as a function component wrapper for tooltip
+    const tooltipProps = typeof tooltip === "string" ? { children: tooltip } : tooltip
 
+    // Properly wrap the button with Tooltip components
     return (
       <Tooltip>
         <TooltipTrigger asChild>{button}</TooltipTrigger>
@@ -582,7 +586,7 @@ const SidebarMenuButton = React.forwardRef<
           side="right"
           align="center"
           hidden={state !== "collapsed" || isMobile}
-          {...tooltip}
+          {...tooltipProps}
         />
       </Tooltip>
     )
