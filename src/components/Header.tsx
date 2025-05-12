@@ -25,6 +25,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleWhatsAppRedirect = () => {
+    window.open('https://wa.me/5571996695990?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20os%20serviços%20da%20Sertinfo.', '_blank');
+  };
+
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-background/95 backdrop-blur-md shadow-nav' : 'py-5 bg-transparent'}`}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
@@ -40,7 +44,10 @@ const Header = () => {
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-1">
             <NavLinks />
-            <Button className="quote-btn ml-4 text-white rounded-md transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2">
+            <Button 
+              className="quote-btn ml-4 text-white rounded-md transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
+              onClick={handleWhatsAppRedirect}
+            >
               <FileText size={18} />
               Solicitar Orçamento
             </Button>
@@ -59,7 +66,10 @@ const Header = () => {
                 <nav className="flex flex-col items-center space-y-4 text-lg">
                   <NavLinks mobile />
                   <SheetClose asChild>
-                    <Button className="quote-btn mt-4 w-full text-white rounded-md transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 py-3 text-base">
+                    <Button 
+                      className="quote-btn mt-4 w-full text-white rounded-md transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 py-3 text-base"
+                      onClick={handleWhatsAppRedirect}
+                    >
                       <FileText size={18} />
                       Solicitar Orçamento
                     </Button>

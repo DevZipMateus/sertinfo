@@ -25,6 +25,10 @@ const PlansSection = () => {
       animatedElements.forEach(el => observer.unobserve(el));
     };
   }, []);
+
+  const handleWhatsAppRedirect = () => {
+    window.open('https://wa.me/5571996695990?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20personalizado%20para%20os%20serviços%20da%20Sertinfo.', '_blank');
+  };
   
   return (
     <section id="plans" ref={sectionRef} className="section-padding bg-white overflow-hidden">
@@ -32,6 +36,20 @@ const PlansSection = () => {
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+        
+        {/* Background tech images */}
+        <div className="absolute inset-0 opacity-5 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="Tech Background" 
+            className="absolute top-0 right-0 w-1/2 h-1/2 object-cover"
+          />
+          <img 
+            src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="Tech Background" 
+            className="absolute bottom-0 left-0 w-1/2 h-1/2 object-cover"
+          />
+        </div>
         
         <div className="text-center mb-16 relative z-10">
           <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 animate-on-scroll">
@@ -59,6 +77,7 @@ const PlansSection = () => {
               "Servidores e Armazenamento",
               "Proteção de Dados"
             ]}
+            image="https://images.unsplash.com/photo-1473091534298-04dcbce3278c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
           />
           
           <SolutionCard 
@@ -72,6 +91,7 @@ const PlansSection = () => {
               "Balanceamento de Cargas",
               "Câmeras de Segurança e CFTV"
             ]}
+            image="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
           />
           
           <SolutionCard 
@@ -85,11 +105,15 @@ const PlansSection = () => {
               "Virtualização",
               "Service Desk"
             ]}
+            image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
           />
         </div>
         
         <div className="mt-12 text-center animate-on-scroll">
-          <Button size="lg" className="quote-btn rounded-md shadow-md transition-all duration-300 flex gap-2">
+          <Button 
+            size="lg" 
+            className="quote-btn rounded-md shadow-md transition-all duration-300 flex gap-2"
+            onClick={handleWhatsAppRedirect}>
             <FileText size={20} />
             <span>Solicitar Orçamento Personalizado</span>
           </Button>
@@ -103,15 +127,22 @@ interface SolutionCardProps {
   title: string;
   icon: React.ReactNode;
   features: string[];
+  image?: string;
 }
 
 const SolutionCard = ({
   title,
   icon,
-  features
+  features,
+  image
 }: SolutionCardProps) => (
   <Card className="animate-on-scroll service-card relative overflow-hidden border shadow-md">
-    <CardContent className="p-8">
+    {image && (
+      <div className="absolute inset-0 z-0 opacity-5">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
+      </div>
+    )}
+    <CardContent className="p-8 relative z-10">
       <div className="text-center mb-6">
         {icon}
         <h3 className="text-xl font-bold">{title}</h3>
