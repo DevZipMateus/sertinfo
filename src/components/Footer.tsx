@@ -1,5 +1,7 @@
+
 import { Button } from '@/components/ui/button';
-import { ChevronUp } from 'lucide-react';
+import { ChevronUp, Mail, Phone, MapPin } from 'lucide-react';
+
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -7,29 +9,33 @@ const Footer = () => {
       behavior: 'smooth'
     });
   };
-  return <footer className="bg-secondary-foreground text-white py-16">
+  
+  const currentYear = new Date().getFullYear();
+  
+  return (
+    <footer className="bg-gradient-to-b from-secondary-foreground to-secondary-foreground/95 text-white py-16">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center mb-3">
-              <img alt="Sertinfo Logo" className="h-10 w-auto mr-3" src="/lovable-uploads/05440ee2-defe-48c8-a194-4373f6106bf4.png" />
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+          <div className="space-y-5">
+            <div className="flex items-center mb-4">
+              <img 
+                alt="Sertinfo Logo" 
+                className="h-12 w-auto mr-3 filter brightness-110" 
+                src="/lovable-uploads/05440ee2-defe-48c8-a194-4373f6106bf4.png" 
+              />
               <h3 className="text-xl font-bold">
                 <span className="text-primary">Sertinfo</span> Tecnologia
               </h3>
             </div>
-            <p className="text-white/80 max-w-xs">
-              Soluções em tecnologia que otimizam processos, aliam facilidade de operação, inteligência e alta conectividade.
+            <p className="text-white/90 max-w-xs leading-relaxed">
+              Soluções em tecnologia que otimizam processos, aliam facilidade de operação, 
+              inteligência e alta conectividade.
             </p>
-            <div className="flex space-x-4 mt-6">
-              <FooterSocialLink href="#" aria-label="Facebook" />
-              <FooterSocialLink href="#" aria-label="Instagram" />
-              <FooterSocialLink href="#" aria-label="LinkedIn" />
-            </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Links Rápidos</h4>
-            <ul className="space-y-2">
+            <h4 className="text-lg font-semibold mb-5 text-primary">Links Rápidos</h4>
+            <ul className="space-y-3">
               <FooterNavItem href="#hero">Início</FooterNavItem>
               <FooterNavItem href="#about">Sobre Nós</FooterNavItem>
               <FooterNavItem href="#services">Serviços</FooterNavItem>
@@ -40,8 +46,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Serviços</h4>
-            <ul className="space-y-2">
+            <h4 className="text-lg font-semibold mb-5 text-primary">Serviços</h4>
+            <ul className="space-y-3">
               <FooterNavItem href="#services">Infraestrutura de TI</FooterNavItem>
               <FooterNavItem href="#services">Segurança</FooterNavItem>
               <FooterNavItem href="#services">Telecomunicações</FooterNavItem>
@@ -51,46 +57,63 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contato</h4>
-            <ul className="space-y-3 text-white/80">
-              <li>(71) 99669-5990</li>
-              <li>comercial@sertinfo.com.br</li>
-              <li>Av. Luiz Tarquínio Pontes, 74, Parque Jockey Clube, Lauro de Freitas/BA</li>
-              <li>Segunda a Sexta, 8h às 18h</li>
+            <h4 className="text-lg font-semibold mb-5 text-primary">Contato</h4>
+            <ul className="space-y-4 text-white/90">
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-primary" />
+                <span>(71) 99669-5990</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-primary" />
+                <span>comercial@sertinfo.com.br</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                <span>Av. Luiz Tarquínio Pontes, 74, Parque Jockey Clube, Lauro de Freitas/BA</span>
+              </li>
+              <li className="flex items-center gap-2 pl-6">
+                Segunda a Sexta, 8h às 18h
+              </li>
             </ul>
           </div>
         </div>
 
-        <hr className="border-white/20 my-8" />
+        <hr className="border-white/15 my-10" />
 
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/70 text-sm">
-            © {new Date().getFullYear()} Sertinfo Tecnologia. Todos os direitos reservados.
+          <p className="text-white/80 text-sm">
+            © {currentYear} Sertinfo Tecnologia. Todos os direitos reservados.
           </p>
-          <div className="mt-4 md:mt-0">
-            <Button onClick={scrollToTop} variant="outline" size="icon" className="rounded-full bg-primary/80 border-primary/20 hover:bg-primary/90 text-white">
+          <div className="mt-6 md:mt-0">
+            <Button 
+              onClick={scrollToTop} 
+              variant="outline" 
+              size="icon" 
+              className="rounded-full bg-primary hover:bg-primary/90 border-primary/30 text-white hover:text-white shadow-md hover:shadow-lg transition-all"
+            >
               <ChevronUp className="h-5 w-5" />
             </Button>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 interface FooterNavItemProps {
   href: string;
   children: React.ReactNode;
 }
-const FooterNavItem = ({
-  href,
-  children
-}: FooterNavItemProps) => <li>
-    <a href={href} className="text-white/70 hover:text-primary transition-colors duration-200">
-      {children}
+
+const FooterNavItem = ({ href, children }: FooterNavItemProps) => (
+  <li>
+    <a 
+      href={href} 
+      className="text-white/80 hover:text-primary transition-colors duration-300 flex items-center"
+    >
+      <span className="hover:translate-x-1 transition-transform duration-300">{children}</span>
     </a>
-  </li>;
-interface FooterSocialLinkProps {
-  href: string;
-  'aria-label': string;
-}
-const FooterSocialLink = (props: FooterSocialLinkProps) => <a {...props} className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20 hover:bg-primary/80 transition-colors duration-200" />;
+  </li>
+);
+
 export default Footer;
