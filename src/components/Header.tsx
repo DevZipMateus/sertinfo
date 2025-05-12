@@ -1,8 +1,15 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, FileText } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
@@ -16,18 +23,32 @@ const Header = () => {
         setIsScrolled(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
 
+    window.addEventListener('scroll', handleScroll);
+    
     // Initialize the scroll state on mount
     handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-background/95 backdrop-blur-md shadow-nav' : 'py-5 bg-transparent'}`}>
+
+  return (
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'py-3 bg-background/95 backdrop-blur-md shadow-nav' 
+          : 'py-5 bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
           <a href="#" className="relative z-20">
             <div className="flex items-center">
-              <img alt="Sertinfo Logo" className="h-10 w-auto mr-3" src="/lovable-uploads/469cb9a0-a153-4a6f-b997-886eb174ebba.png" />
+              <img
+                src="/lovable-uploads/7a87fc93-df6e-408e-bbb1-cf08ba1ef75b.png"
+                alt="Sertinfo Logo"
+                className="h-10 w-auto mr-3"
+              />
               <h1 className="text-xl font-display font-bold text-secondary-foreground">
                 <span className="text-primary">Sertinfo</span> Tecnologia
               </h1>
@@ -67,40 +88,43 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </header>;
+    </header>
+  );
 };
+
 interface NavLinksProps {
   mobile?: boolean;
   onClick?: () => void;
 }
-const NavLinks = ({
-  mobile,
-  onClick
-}: NavLinksProps) => {
-  const links = [{
-    name: 'Início',
-    href: '#hero'
-  }, {
-    name: 'Sobre Nós',
-    href: '#about'
-  }, {
-    name: 'Serviços',
-    href: '#services'
-  }, {
-    name: 'Soluções',
-    href: '#plans'
-  }, {
-    name: 'Depoimentos',
-    href: '#testimonials'
-  }, {
-    name: 'Contato',
-    href: '#contact'
-  }];
-  return <>
-      {links.map(link => <a key={link.name} href={link.href} className={`font-medium transition-all duration-300 px-3 py-2 rounded-md
-            ${mobile ? 'text-xl text-foreground hover:text-primary mb-2 w-full text-center py-3' : 'text-foreground/80 hover:text-primary hover:bg-secondary/50'}`} onClick={onClick}>
+
+const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
+  const links = [
+    { name: 'Início', href: '#hero' },
+    { name: 'Sobre Nós', href: '#about' },
+    { name: 'Serviços', href: '#services' },
+    { name: 'Soluções', href: '#plans' },
+    { name: 'Depoimentos', href: '#testimonials' },
+    { name: 'Contato', href: '#contact' },
+  ];
+
+  return (
+    <>
+      {links.map((link) => (
+        <a
+          key={link.name}
+          href={link.href}
+          className={`font-medium transition-all duration-300 px-3 py-2 rounded-md
+            ${mobile 
+              ? 'text-xl text-foreground hover:text-primary mb-2 w-full text-center py-3' 
+              : 'text-foreground/80 hover:text-primary hover:bg-secondary/50'
+            }`}
+          onClick={onClick}
+        >
           {link.name}
-        </a>)}
-    </>;
+        </a>
+      ))}
+    </>
+  );
 };
+
 export default Header;
