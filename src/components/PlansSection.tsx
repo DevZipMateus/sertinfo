@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, FileText } from 'lucide-react';
+import { Check, FileText, Server, Wifi, Shield } from 'lucide-react';
 
 const PlansSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -50,6 +50,7 @@ const PlansSection = () => {
         <div className="grid md:grid-cols-3 gap-8 relative z-10">
           <SolutionCard 
             title="Infraestrutura de TI" 
+            icon={<Server className="h-8 w-8 text-primary mb-4" />}
             features={[
               "Consultoria e Serviços de TI",
               "Cabeamento Estruturado",
@@ -62,6 +63,7 @@ const PlansSection = () => {
           
           <SolutionCard 
             title="Telecomunicações" 
+            icon={<Wifi className="h-8 w-8 text-primary mb-4" />}
             features={[
               "Assessoria Técnica e Gerencial",
               "Certificação de Redes",
@@ -73,12 +75,13 @@ const PlansSection = () => {
           />
           
           <SolutionCard 
-            title="Serviços de Informática" 
+            title="Segurança Digital" 
+            icon={<Shield className="h-8 w-8 text-primary mb-4" />}
             features={[
-              "Assistência técnica especializada",
-              "Implantação de Sistemas",
-              "Processos de Manutenção",
-              "Locação de Impressoras",
+              "Proteção de Dados",
+              "Firewall e sistemas de proteção",
+              "Monitoramento em tempo real",
+              "Backup e recuperação de dados",
               "Virtualização",
               "Service Desk"
             ]}
@@ -98,16 +101,21 @@ const PlansSection = () => {
 
 interface SolutionCardProps {
   title: string;
+  icon: React.ReactNode;
   features: string[];
 }
 
 const SolutionCard = ({
   title,
+  icon,
   features
 }: SolutionCardProps) => (
   <Card className="animate-on-scroll service-card relative overflow-hidden border shadow-md">
     <CardContent className="p-8">
-      <h3 className="text-xl font-bold mb-6 text-center">{title}</h3>
+      <div className="text-center mb-6">
+        {icon}
+        <h3 className="text-xl font-bold">{title}</h3>
+      </div>
       
       <ul className="space-y-4">
         {features.map((feature, i) => (

@@ -43,9 +43,16 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
           <a href="#" className="relative z-20">
-            <h1 className="text-2xl font-display font-bold text-secondary-foreground">
-              <span className="text-primary">Harmônica</span> Contabilidade
-            </h1>
+            <div className="flex items-center">
+              <img
+                src="/lovable-uploads/7a87fc93-df6e-408e-bbb1-cf08ba1ef75b.png"
+                alt="Sertinfo Logo"
+                className="h-10 w-auto mr-3"
+              />
+              <h1 className="text-xl font-display font-bold text-secondary-foreground">
+                <span className="text-primary">Sertinfo</span> Tecnologia
+              </h1>
+            </div>
           </a>
 
           {/* Desktop Menu */}
@@ -53,7 +60,7 @@ const Header = () => {
             <NavLinks />
             <Button className="quote-btn ml-4 text-white rounded-md transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2">
               <FileText size={18} />
-              Fale Conosco
+              Solicitar Orçamento
             </Button>
           </nav>
 
@@ -72,7 +79,7 @@ const Header = () => {
                   <SheetClose asChild>
                     <Button className="quote-btn mt-4 w-full text-white rounded-md transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 py-3 text-base">
                       <FileText size={18} />
-                      Fale Conosco
+                      Solicitar Orçamento
                     </Button>
                   </SheetClose>
                 </nav>
@@ -95,7 +102,8 @@ const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
     { name: 'Início', href: '#hero' },
     { name: 'Sobre Nós', href: '#about' },
     { name: 'Serviços', href: '#services' },
-    { name: 'Planos', href: '#plans' },
+    { name: 'Soluções', href: '#plans' },
+    { name: 'Depoimentos', href: '#testimonials' },
     { name: 'Contato', href: '#contact' },
   ];
 

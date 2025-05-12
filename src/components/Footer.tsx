@@ -15,11 +15,18 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold mb-4">
-              <span className="text-primary">Harmônica</span> Contabilidade
-            </h3>
+            <div className="flex items-center mb-3">
+              <img
+                src="/lovable-uploads/7a87fc93-df6e-408e-bbb1-cf08ba1ef75b.png"
+                alt="Sertinfo Logo"
+                className="h-10 w-auto mr-3"
+              />
+              <h3 className="text-xl font-bold">
+                <span className="text-primary">Sertinfo</span> Tecnologia
+              </h3>
+            </div>
             <p className="text-white/80 max-w-xs">
-              Soluções contábeis personalizadas para o crescimento e sucesso do seu negócio.
+              Soluções em tecnologia que otimizam processos, aliam facilidade de operação, inteligência e alta conectividade.
             </p>
             <div className="flex space-x-4 mt-6">
               <FooterSocialLink href="#" aria-label="Facebook" />
@@ -34,7 +41,8 @@ const Footer = () => {
               <FooterNavItem href="#hero">Início</FooterNavItem>
               <FooterNavItem href="#about">Sobre Nós</FooterNavItem>
               <FooterNavItem href="#services">Serviços</FooterNavItem>
-              <FooterNavItem href="#plans">Planos</FooterNavItem>
+              <FooterNavItem href="#plans">Soluções</FooterNavItem>
+              <FooterNavItem href="#testimonials">Depoimentos</FooterNavItem>
               <FooterNavItem href="#contact">Contato</FooterNavItem>
             </ul>
           </div>
@@ -42,21 +50,21 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Serviços</h4>
             <ul className="space-y-2">
-              <FooterNavItem href="#services">Contabilidade Empresarial</FooterNavItem>
-              <FooterNavItem href="#services">Consultoria Tributária</FooterNavItem>
-              <FooterNavItem href="#services">Gestão Fiscal</FooterNavItem>
-              <FooterNavItem href="#services">Departamento Pessoal</FooterNavItem>
-              <FooterNavItem href="#services">Planejamento Tributário</FooterNavItem>
+              <FooterNavItem href="#services">Infraestrutura de TI</FooterNavItem>
+              <FooterNavItem href="#services">Segurança</FooterNavItem>
+              <FooterNavItem href="#services">Telecomunicações</FooterNavItem>
+              <FooterNavItem href="#services">Redes</FooterNavItem>
+              <FooterNavItem href="#services">Informática</FooterNavItem>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Contato</h4>
             <ul className="space-y-3 text-white/80">
-              <li>(11) 3456-7890</li>
-              <li>contato@harmonicacontabil.com.br</li>
-              <li>Av. Paulista, 1000, São Paulo - SP</li>
-              <li>Segunda a Sexta, 9h às 18h</li>
+              <li>(71) 99669-5990</li>
+              <li>comercial@sertinfo.com.br</li>
+              <li>Av. Luiz Tarquínio Pontes, 74, Parque Jockey Clube, Lauro de Freitas/BA</li>
+              <li>Segunda a Sexta, 8h às 18h</li>
             </ul>
           </div>
         </div>
@@ -65,7 +73,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/70 text-sm">
-            © {new Date().getFullYear()} Harmônica Contabilidade. Todos os direitos reservados.
+            © {new Date().getFullYear()} Sertinfo Tecnologia. Todos os direitos reservados.
           </p>
           <div className="mt-4 md:mt-0">
             <Button

@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="section-padding bg-gray-50 overflow-hidden">
+    <section id="testimonials" ref={sectionRef} className="section-padding bg-gray-50 overflow-hidden">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 animate-on-scroll">

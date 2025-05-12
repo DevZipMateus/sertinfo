@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Server, Wifi, Monitor, Shield, Phone, Database } from 'lucide-react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const ServicesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -61,6 +62,28 @@ const ServicesSection = () => {
   return (
     <section id="services" ref={sectionRef} className="section-padding bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto">
+        {/* Banner image */}
+        <div className="mb-12 rounded-xl overflow-hidden shadow-xl animate-on-scroll">
+          <AspectRatio ratio={16/5} className="bg-gray-100">
+            <div className="relative w-full h-full overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent z-10"></div>
+              <img 
+                src="/lovable-uploads/b4a47583-54bb-4862-8ddb-715085bb1758.png" 
+                alt="Infraestrutura de TI" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center z-20">
+                <div className="container mx-auto px-6">
+                  <div className="max-w-lg text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2">Infraestrutura completa para sua empresa</h3>
+                    <p className="text-white/90">Soluções integradas em tecnologia da informação</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AspectRatio>
+        </div>
+
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 animate-on-scroll">
             Nossos Serviços
