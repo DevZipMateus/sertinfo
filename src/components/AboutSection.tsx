@@ -34,11 +34,11 @@ const AboutSection = () => {
             Sobre Nós
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Conhecimento e Experiência para o Sucesso do seu Negócio
+            Experiência e Inovação em Tecnologia
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Mais que um escritório contábil, somos um parceiro estratégico comprometido com
-            o crescimento sustentável da sua empresa.
+            Mais que uma empresa de tecnologia, somos um parceiro estratégico comprometido com
+            o crescimento e otimização da sua empresa.
           </p>
         </div>
 
@@ -46,20 +46,19 @@ const AboutSection = () => {
           <div className="space-y-6">
             <div className="animate-on-scroll">
               <h3 className="text-2xl font-bold mb-4">
-                Conte com uma Contabilidade Harmônica
+                Conte com a Sertinfo Comércio e Serviços
               </h3>
               <p className="text-muted-foreground mb-6">
-                Desde 2010, ajudamos empresas de todos os tamanhos a otimizar suas operações
-                financeiras e contábeis. Nossa abordagem combina expertise técnica com um
-                atendimento personalizado, garantindo que cada cliente receba soluções
-                adequadas às suas necessidades específicas.
+                Há mais de 20 anos, ajudamos empresas a otimizar seus processos de tecnologia.
+                Nossa abordagem combina expertise técnica com um atendimento personalizado,
+                garantindo soluções que aliam facilidade de operação, inteligência e alta conectividade.
               </p>
               <ul className="space-y-3">
                 {[
                   'Equipe multidisciplinar e altamente qualificada',
-                  'Processos contábeis simplificados e transparentes',
-                  'Tecnologia de ponta para gestão financeira eficiente',
-                  'Comunicação clara e atendimento personalizado'
+                  'Tecnologia de ponta para processos inteligentes',
+                  'Atendimento personalizado e soluções sob medida',
+                  'Mais de 20 anos de experiência no mercado'
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -74,22 +73,22 @@ const AboutSection = () => {
             <AboutCard 
               icon={<Target className="h-10 w-10 text-primary" />}
               title="Missão"
-              description="Oferecer serviços contábeis de excelência, proporcionando segurança e tranquilidade para que nossos clientes possam focar no crescimento de seus negócios."
+              description="Otimizar processos de tecnologia, proporcionando soluções que aliam facilidade de operação, inteligência e alta conectividade."
             />
             <AboutCard 
               icon={<Heart className="h-10 w-10 text-primary" />}
               title="Visão"
-              description="Ser reconhecida como referência em contabilidade consultiva no Brasil, criando relacionamentos duradouros baseados em confiança e resultados."
+              description="Ser referência em soluções tecnológicas, criando relacionamentos duradouros baseados em confiança e resultados."
             />
             <AboutCard 
               icon={<Award className="h-10 w-10 text-primary" />}
               title="Valores"
-              description="Ética, transparência, compromisso com resultados, excelência técnica e inovação constante em nossos processos e serviços."
+              description="Comprometimento, excelência técnica, inovação constante e foco total na satisfação do cliente."
             />
             <AboutCard 
               icon={<Check className="h-10 w-10 text-primary" />}
               title="Diferenciais"
-              description="Atendimento personalizado, tecnologia de ponta, equipe especializada e processos transparentes para garantir sua satisfação."
+              description="Experiência de mais de 20 anos, equipe especializada e soluções personalizadas para cada cliente."
             />
           </div>
         </div>

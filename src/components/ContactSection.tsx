@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Phone, Mail, MapPin, Clock, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -30,25 +30,25 @@ const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5 text-primary" />,
       title: "Telefone",
-      details: "(11) 3456-7890",
-      link: "tel:+551134567890"
+      details: "(71) 99669-5990",
+      link: "tel:+5571996695990"
     },
     {
       icon: <Mail className="h-5 w-5 text-primary" />,
       title: "E-mail",
-      details: "contato@harmonicacontabil.com.br",
-      link: "mailto:contato@harmonicacontabil.com.br"
+      details: "comercial@sertinfo.com.br",
+      link: "mailto:comercial@sertinfo.com.br"
     },
     {
       icon: <MapPin className="h-5 w-5 text-primary" />,
       title: "Endereço",
-      details: "Av. Paulista, 1000, São Paulo - SP",
+      details: "Av. Luiz Tarquínio Pontes, 74, Parque Jockey Clube, Lauro de Freitas/BA",
       link: "https://maps.google.com"
     },
     {
       icon: <Clock className="h-5 w-5 text-primary" />,
       title: "Horário",
-      details: "Segunda a Sexta, 9h às 18h",
+      details: "Segunda a Sexta, 8h às 18h",
       link: null
     }
   ];
@@ -97,12 +97,8 @@ const ContactSection = () => {
                   </div>
                   
                   <div>
-                    <h4 className="text-lg font-medium mb-4">Siga-nos</h4>
-                    <div className="flex space-x-3">
-                      <SocialLink icon={<Facebook size={20} />} href="#" label="Facebook" />
-                      <SocialLink icon={<Instagram size={20} />} href="#" label="Instagram" />
-                      <SocialLink icon={<Linkedin size={20} />} href="#" label="LinkedIn" />
-                    </div>
+                    <h4 className="text-lg font-medium mb-4">Responsável</h4>
+                    <p className="text-muted-foreground">Alberto Correia</p>
                   </div>
                 </div>
                 
@@ -125,22 +121,6 @@ const ContactSection = () => {
                 </div>
               </div>
             </CardContent>
-          </Card>
-        </div>
-
-        <div className="mt-16 animate-on-scroll">
-          <Card className="border border-border/50 shadow-card overflow-hidden">
-            <div className="h-[400px] w-full">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976950243356!2d-46.6547919!3d-23.5651084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1627909542948!5m2!1spt-BR!2sbr"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                title="Mapa de localização"
-              ></iframe>
-            </div>
           </Card>
         </div>
       </div>
@@ -176,21 +156,5 @@ const ContactInfoItem = ({ icon, title, details, link }: ContactInfoItemProps) =
 
   return content;
 };
-
-interface SocialLinkProps {
-  icon: React.ReactNode;
-  href: string;
-  label: string;
-}
-
-const SocialLink = ({ icon, href, label }: SocialLinkProps) => (
-  <a
-    href={href}
-    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
-    aria-label={label}
-  >
-    {icon}
-  </a>
-);
 
 export default ContactSection;

@@ -9,6 +9,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { Helmet } from 'react-helmet';
 
 const Index = () => {
   useEffect(() => {
@@ -34,6 +35,17 @@ const Index = () => {
 
   return (
     <div className="overflow-x-hidden">
+      <Helmet>
+        <title>Sertinfo - Soluções em Tecnologia | Há mais de 20 anos no mercado</title>
+        <meta name="description" content="A SERTINFO cria e implementa soluções que buscam a otimização dos processos de tecnologia, aliando facilidade de operação, inteligência e alta conectividade." />
+        <meta name="keywords" content="sertinfo, tecnologia, infraestrutura, telecomunicações, informática, soluções em TI, Bahia, Lauro de Freitas" />
+        <meta property="og:title" content="Sertinfo - Soluções em Tecnologia" />
+        <meta property="og:description" content="Soluções que buscam a otimização dos processos de tecnologia, aliando facilidade de operação, inteligência e alta conectividade." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sertinfo.com.br" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://sertinfo.com.br" />
+      </Helmet>
       <Header />
       <HeroSection />
       <AboutSection />

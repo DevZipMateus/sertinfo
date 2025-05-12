@@ -1,8 +1,7 @@
 
 import { useEffect, useRef } from 'react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { FileText, PieChart, Building, Shield, FileCheck, BarChart } from 'lucide-react';
+import { Server, Wifi, Monitor, Shield, Phone, Database } from 'lucide-react';
 
 const ServicesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -28,34 +27,34 @@ const ServicesSection = () => {
   
   const services = [
     {
-      icon: <Building className="h-12 w-12 text-primary" />,
-      title: "Abertura e Legalização de Empresas",
-      description: "Simplificamos todo o processo de criação da sua empresa, cuidando da burocracia para você iniciar suas atividades rapidamente."
-    }, 
-    {
-      icon: <FileText className="h-12 w-12 text-primary" />,
-      title: "Contabilidade Empresarial",
-      description: "Registro preciso de todas as operações fiscais e contábeis, garantindo conformidade com as exigências legais."
-    }, 
-    {
-      icon: <PieChart className="h-12 w-12 text-primary" />,
-      title: "Gestão Fiscal e Tributária",
-      description: "Planejamento tributário estratégico para reduzir legalmente a carga de impostos e otimizar os recursos da sua empresa."
+      icon: <Server className="h-12 w-12 text-primary" />,
+      title: "Infraestrutura",
+      description: "Consultoria e Serviços de TI, Cabeamento Estruturado, Rede Wireless, LAN/WAN, DataCenter, Servidores e Armazenamento de Dados."
     }, 
     {
       icon: <Shield className="h-12 w-12 text-primary" />,
-      title: "Consultoria Tributária",
-      description: "Orientação especializada para tomadas de decisão estratégicas, maximizando resultados e minimizando riscos."
+      title: "Segurança",
+      description: "Segurança da Informação e Comunicação, Controle de Acessos e Rede, Serviços de Monitoramento e proteção de dados."
     }, 
     {
-      icon: <FileCheck className="h-12 w-12 text-primary" />,
-      title: "Departamento Pessoal",
-      description: "Gestão completa de folha de pagamento, admissões, demissões e toda a rotina trabalhista da sua empresa."
+      icon: <Phone className="h-12 w-12 text-primary" />,
+      title: "Telecomunicações",
+      description: "Assessoria Técnica e Gerencial, Certificação de Redes, Comunicação de Dados, Centrais Telefônicas e Balanceamento de Cargas."
     }, 
     {
-      icon: <BarChart className="h-12 w-12 text-primary" />,
-      title: "Gestão Financeira",
-      description: "Acompanhamento de indicadores financeiros, fluxo de caixa e análises gerenciais para decisões mais assertivas."
+      icon: <Wifi className="h-12 w-12 text-primary" />,
+      title: "Redes",
+      description: "Câmeras de Segurança, CFTV, Redes Ópticas, configuração e manutenção de infraestrutura de rede completa."
+    }, 
+    {
+      icon: <Monitor className="h-12 w-12 text-primary" />,
+      title: "Informática",
+      description: "Assistência técnica, Implantação de Sistemas, Processos de Manutenção Industrial e Locação de Impressoras e Multifuncionais."
+    }, 
+    {
+      icon: <Database className="h-12 w-12 text-primary" />,
+      title: "Virtualização",
+      description: "Servidores Dedicados, Service Desk, implementação e manutenção de ambientes virtualizados para maior eficiência."
     }
   ];
   
@@ -67,10 +66,10 @@ const ServicesSection = () => {
             Nossos Serviços
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Soluções Contábeis Completas
+            Soluções Completas em Tecnologia
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Oferecemos uma gama completa de serviços contábeis e financeiros para atender às necessidades 
+            Oferecemos uma gama completa de serviços de tecnologia e infraestrutura para atender às necessidades 
             específicas do seu negócio.
           </p>
         </div>
@@ -85,10 +84,6 @@ const ServicesSection = () => {
               index={index} 
             />
           ))}
-        </div>
-
-        <div className="mt-16 text-center animate-on-scroll">
-          
         </div>
       </div>
     </section>

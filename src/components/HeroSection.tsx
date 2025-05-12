@@ -22,7 +22,7 @@ const HeroSection = () => {
   };
   
   return <section id="hero" ref={sectionRef} className="relative min-h-screen flex items-center justify-center pt-16">
-      {/* Background with overlay - Base color (60%) */}
+      {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-background"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/10"></div>
@@ -30,17 +30,25 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          <span className="inline-block px-4 py-2 bg-secondary/60 backdrop-blur-md rounded-full text-secondary-foreground font-medium mb-6 animate-slide-up [animation-delay:300ms]">
-            Soluções Contábeis Inteligentes
-          </span>
+          <div className="mb-6 flex justify-center animate-slide-up [animation-delay:300ms]">
+            <img 
+              src="/lovable-uploads/7a87fc93-df6e-408e-bbb1-cf08ba1ef75b.png" 
+              alt="Sertinfo Logo" 
+              className="h-24 md:h-32 w-auto"
+            />
+          </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight animate-slide-up [animation-delay:500ms]">
-            Transformamos sua Contabilidade em um <span className="text-primary">Diferencial Competitivo</span>
+            Soluções em <span className="text-primary">Tecnologia</span> para o seu Negócio
           </h1>
           
-          <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto animate-slide-up [animation-delay:700ms]">
-            Serviços contábeis personalizados para empresas que buscam crescimento organizado 
-            e otimização financeira.
+          <p className="text-lg md:text-xl text-foreground/80 mb-4 max-w-2xl mx-auto animate-slide-up [animation-delay:700ms]">
+            A SERTINFO cria e implementa soluções que buscam a otimização dos processos de tecnologia, 
+            aliando facilidade de operação, inteligência e alta conectividade.
+          </p>
+          
+          <p className="text-md md:text-lg text-primary font-medium mb-8 animate-slide-up [animation-delay:800ms]">
+            Atuando no mercado há mais de 20 anos!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up [animation-delay:900ms] mb-16">
@@ -55,7 +63,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll down indicator - Adjusted to be lower */}
+      {/* Scroll down indicator */}
       <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-primary cursor-pointer animate-bounce" onClick={scrollToNextSection}>
         <ChevronDown size={32} />
       </div>
