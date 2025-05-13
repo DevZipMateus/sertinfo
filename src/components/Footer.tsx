@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           <div className="space-y-5">
             <div className="flex items-center mb-4">
-              <img alt="Sertinfo Logo" className="h-12 w-auto mr-3" src="/lovable-uploads/05440ee2-defe-48c8-a194-4373f6106bf4.png" />
+              <img alt="Sertinfo Logo" src="/lovable-uploads/05440ee2-defe-48c8-a194-4373f6106bf4.png" className="h-24 w-auto mr-3" />
               
             </div>
             <p className="text-gray-600 max-w-xs leading-relaxed">
