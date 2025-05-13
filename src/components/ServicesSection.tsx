@@ -93,7 +93,7 @@ const ServicesSection = () => {
             <div className="relative bg-black overflow-hidden">
               <img src="/lovable-uploads/f3b8f6b5-87f1-475c-ba3d-75a1775e61df.png" alt="Analytics e monitoramento" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
             </div>
-            <div className="relative bg-black overflow-hidden">
+            <div className="relative bg-black overflow-hidden h-full">
               <img src="/lovable-uploads/2215bb0c-0261-4ee5-83fa-95e7d945318f.png" alt="Infraestrutura de rede" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity hover:scale-105 duration-500" />
             </div>
           </div>
@@ -103,7 +103,7 @@ const ServicesSection = () => {
         <div className="p-6 bg-gradient-to-r from-[#e0f7ea] to-[#f0f9f5] rounded-xl shadow-md mb-16 animate-slide-in-left">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/3">
-              <img alt="Egestor ERP" className="" src="https://egestor.com.br/assets/img/logo.png" />
+              <img alt="Egestor ERP" className="w-full max-w-[300px] mx-auto" src="https://egestor.com.br/assets/img/logo.png" />
             </div>
             <div className="md:w-2/3">
               <div className="flex items-center gap-3 mb-4">
