@@ -103,7 +103,7 @@ const ServicesSection = () => {
         <div className="p-6 bg-gradient-to-r from-[#e0f7ea] to-[#f0f9f5] rounded-xl shadow-md mb-16 animate-slide-in-left">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/3">
-              <img alt="Egestor ERP" src="/lovable-uploads/28e2822f-5bc8-4021-bf3c-48b1f3ff86f3.png" className="" />
+              <img alt="Egestor ERP" className="" src="https://egestor.com.br/assets/img/logo.png" />
             </div>
             <div className="md:w-2/3">
               <div className="flex items-center gap-3 mb-4">
