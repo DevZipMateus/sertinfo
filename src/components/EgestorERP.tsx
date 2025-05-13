@@ -1,13 +1,9 @@
-
 import React from 'react';
 import { FileChartPie } from 'lucide-react';
-
 const EgestorERP = () => {
   // Link for both the title and button
   const egestorLink = "https://www.egestor.com.br/afl/7187";
-
-  return (
-    <section id="egestorERP" className="py-20 bg-white overflow-hidden">
+  return <section id="egestorERP" className="py-20 bg-white overflow-hidden">
       <div className="container px-4 mx-auto max-w-6xl">
         {/* Section header with enhanced styling */}
         <div className="text-center mb-12 animate-fade-in">
@@ -68,9 +64,7 @@ const EgestorERP = () => {
               </ul>
               
               <a href={egestorLink} target="_blank" rel="noopener noreferrer" className="inline-block mt-4">
-                <button className="py-3 px-8 bg-[#7CFFA0] hover:bg-[#6DF090] text-black font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]">
-                  Teste grátis por 7 dias
-                </button>
+                <button className="py-3 px-8 bg-[#7CFFA0] hover:bg-[#6DF090] text-black font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]">Teste grátis por 10 dias</button>
               </a>
             </div>
           </div>
@@ -95,8 +89,6 @@ const EgestorERP = () => {
           </a>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default EgestorERP;
