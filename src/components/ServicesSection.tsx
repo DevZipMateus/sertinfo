@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Server, Wifi, Monitor, Shield, Phone, Database } from 'lucide-react';
+import { Server, Wifi, Monitor, Shield, Phone, Database, FileChart } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const ServicesSection = () => {
@@ -52,6 +52,11 @@ const ServicesSection = () => {
       title: "Informática",
       description: "Assistência técnica, Implantação de Sistemas, Processos de Manutenção Industrial e Locação de Impressoras e Multifuncionais."
     }, 
+    {
+      icon: <FileChart className="h-12 w-12 text-primary" />,
+      title: "Sistema de Gestão (ERP)",
+      description: "Sistema completo de gestão para pequenas e médias empresas, com foco no controle de estoque, vendas, PDV e finanças."
+    },
     {
       icon: <Database className="h-12 w-12 text-primary" />,
       title: "Virtualização",
@@ -125,6 +130,36 @@ const ServicesSection = () => {
                 alt="Infraestrutura de rede" 
                 className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity hover:scale-105 duration-500"
               />
+            </div>
+          </div>
+        </div>
+
+        {/* Destaque para Sistema ERP - Egestor */}
+        <div className="p-6 bg-gradient-to-r from-[#e0f7ea] to-[#f0f9f5] rounded-xl shadow-md mb-16 animate-slide-in-left">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/3">
+              <img 
+                src="/lovable-uploads/00b6d73e-0139-4a17-ad97-b66dac2be5f8.png" 
+                alt="Egestor ERP" 
+                className="rounded-lg shadow-lg w-full h-auto"
+              />
+            </div>
+            <div className="md:w-2/3">
+              <div className="flex items-center gap-3 mb-4">
+                <FileChart className="h-8 w-8 text-[#7CFFA0]" />
+                <h3 className="text-2xl font-bold">Sistema de Gestão Empresarial (ERP)</h3>
+              </div>
+              <p className="text-gray-700 mb-6">
+                Oferecemos o <span className="font-semibold">Egestor</span>, um sistema completo de gestão 
+                para pequenas e médias empresas, com foco no controle de estoque, vendas, PDV e finanças. 
+                Otimize seus processos e aumente seus lucros com uma solução completa e fácil de usar.
+              </p>
+              <a 
+                href="#egestorERP" 
+                className="inline-block py-3 px-8 bg-[#7CFFA0] hover:bg-[#6DF090] text-black font-medium rounded-full transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-[1.02]"
+              >
+                Conheça mais sobre o Egestor
+              </a>
             </div>
           </div>
         </div>
