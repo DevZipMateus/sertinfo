@@ -1,60 +1,46 @@
-
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach((el) => observer.observe(el));
-
+    animatedElements.forEach(el => observer.observe(el));
     return () => {
-      animatedElements.forEach((el) => observer.unobserve(el));
+      animatedElements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  const contactInfo = [
-    {
-      icon: <Phone className="h-5 w-5 text-primary" />,
-      title: "Telefone",
-      details: "(71) 99669-5990",
-      link: "tel:+5571996695990"
-    },
-    {
-      icon: <Mail className="h-5 w-5 text-primary" />,
-      title: "E-mail",
-      details: "comercial@sertinfo.com.br",
-      link: "mailto:comercial@sertinfo.com.br"
-    },
-    {
-      icon: <MapPin className="h-5 w-5 text-primary" />,
-      title: "Endereço",
-      details: "Av. Luiz Tarquínio Pontes, 74, Parque Jockey Clube, Lauro de Freitas/BA",
-      link: "https://maps.google.com"
-    },
-    {
-      icon: <Clock className="h-5 w-5 text-primary" />,
-      title: "Horário",
-      details: "Segunda a Sexta, 8h às 18h",
-      link: null
-    }
-  ];
-
-  return (
-    <section id="contact" ref={sectionRef} className="section-padding bg-white relative overflow-hidden">
+  const contactInfo = [{
+    icon: <Phone className="h-5 w-5 text-primary" />,
+    title: "Telefone",
+    details: "(71) 99669-5990",
+    link: "tel:+5571996695990"
+  }, {
+    icon: <Mail className="h-5 w-5 text-primary" />,
+    title: "E-mail",
+    details: "comercial@sertinfo.com.br",
+    link: "mailto:comercial@sertinfo.com.br"
+  }, {
+    icon: <MapPin className="h-5 w-5 text-primary" />,
+    title: "Endereço",
+    details: "Av. Luiz Tarquínio Pontes, 74, Parque Jockey Clube, Lauro de Freitas/BA",
+    link: "https://maps.google.com"
+  }, {
+    icon: <Clock className="h-5 w-5 text-primary" />,
+    title: "Horário",
+    details: "Segunda a Sexta, 8h às 18h",
+    link: null
+  }];
+  return <section id="contact" ref={sectionRef} className="section-padding bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
@@ -85,21 +71,10 @@ const ContactSection = () => {
                   </p>
                   
                   <div className="space-y-6 mb-8">
-                    {contactInfo.map((item, index) => (
-                      <ContactInfoItem 
-                        key={index}
-                        icon={item.icon}
-                        title={item.title}
-                        details={item.details}
-                        link={item.link}
-                      />
-                    ))}
+                    {contactInfo.map((item, index) => <ContactInfoItem key={index} icon={item.icon} title={item.title} details={item.details} link={item.link} />)}
                   </div>
                   
-                  <div>
-                    <h4 className="text-lg font-medium mb-4">Responsável</h4>
-                    <p className="text-muted-foreground">Alberto Correia</p>
-                  </div>
+                  
                 </div>
                 
                 <div className="flex items-center justify-center">
@@ -124,37 +99,32 @@ const ContactSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 interface ContactInfoItemProps {
   icon: React.ReactNode;
   title: string;
   details: string;
   link: string | null;
 }
-
-const ContactInfoItem = ({ icon, title, details, link }: ContactInfoItemProps) => {
-  const content = (
-    <div className="flex">
+const ContactInfoItem = ({
+  icon,
+  title,
+  details,
+  link
+}: ContactInfoItemProps) => {
+  const content = <div className="flex">
       <div className="flex-shrink-0 mr-3 mt-1">{icon}</div>
       <div>
         <h4 className="font-medium">{title}</h4>
         <p className="text-muted-foreground mt-1">{details}</p>
       </div>
-    </div>
-  );
-
+    </div>;
   if (link) {
-    return (
-      <a href={link} className="block hover:text-primary transition-colors">
+    return <a href={link} className="block hover:text-primary transition-colors">
         {content}
-      </a>
-    );
+      </a>;
   }
-
   return content;
 };
-
 export default ContactSection;
