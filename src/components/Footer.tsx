@@ -1,7 +1,5 @@
-
 import { Button } from '@/components/ui/button';
 import { ChevronUp, Mail, Phone, MapPin } from 'lucide-react';
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -9,23 +7,14 @@ const Footer = () => {
       behavior: 'smooth'
     });
   };
-  
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-gray-50 text-gray-700 py-16">
+  return <footer className="bg-gray-50 text-gray-700 py-16">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           <div className="space-y-5">
             <div className="flex items-center mb-4">
-              <img 
-                alt="Sertinfo Logo" 
-                className="h-12 w-auto mr-3" 
-                src="/lovable-uploads/05440ee2-defe-48c8-a194-4373f6106bf4.png" 
-              />
-              <h3 className="text-xl font-bold">
-                <span className="text-primary">Sertinfo</span> Tecnologia
-              </h3>
+              <img alt="Sertinfo Logo" className="h-12 w-auto mr-3" src="/lovable-uploads/05440ee2-defe-48c8-a194-4373f6106bf4.png" />
+              
             </div>
             <p className="text-gray-600 max-w-xs leading-relaxed">
               Soluções em tecnologia que otimizam processos, aliam facilidade de operação, 
@@ -85,35 +74,24 @@ const Footer = () => {
             © {currentYear} Sertinfo Tecnologia. Todos os direitos reservados.
           </p>
           <div className="mt-6 md:mt-0">
-            <Button 
-              onClick={scrollToTop} 
-              variant="outline" 
-              size="icon" 
-              className="rounded-full bg-primary hover:bg-primary/90 border-primary/30 text-white hover:text-white shadow-md hover:shadow-lg transition-all"
-            >
+            <Button onClick={scrollToTop} variant="outline" size="icon" className="rounded-full bg-primary hover:bg-primary/90 border-primary/30 text-white hover:text-white shadow-md hover:shadow-lg transition-all">
               <ChevronUp className="h-5 w-5" />
             </Button>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 interface FooterNavItemProps {
   href: string;
   children: React.ReactNode;
 }
-
-const FooterNavItem = ({ href, children }: FooterNavItemProps) => (
-  <li>
-    <a 
-      href={href} 
-      className="text-gray-600 hover:text-primary transition-colors duration-300 flex items-center"
-    >
+const FooterNavItem = ({
+  href,
+  children
+}: FooterNavItemProps) => <li>
+    <a href={href} className="text-gray-600 hover:text-primary transition-colors duration-300 flex items-center">
       <span className="hover:translate-x-1 transition-transform duration-300">{children}</span>
     </a>
-  </li>
-);
-
+  </li>;
 export default Footer;
