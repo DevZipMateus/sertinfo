@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FileChart } from 'lucide-react';
+import { FileChartPie } from 'lucide-react';
 
 const EgestorERP = () => {
   // Link for both the title and button
@@ -29,7 +29,7 @@ const EgestorERP = () => {
             <div className="bg-gradient-to-br from-[#f9fefc] to-[#e0f7ea] p-8 rounded-xl shadow-md">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-[#7CFFA0] p-3 rounded-full">
-                  <FileChart className="h-6 w-6 text-gray-800" />
+                  <FileChartPie className="h-6 w-6 text-gray-800" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800">Egestor</h3>
               </div>

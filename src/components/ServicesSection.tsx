@@ -1,7 +1,6 @@
-
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Server, Wifi, Monitor, Shield, Phone, Database, FileChart } from 'lucide-react';
+import { Server, Wifi, Monitor, Shield, Phone, Database, FileChartPie } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const ServicesSection = () => {
@@ -53,7 +52,7 @@ const ServicesSection = () => {
       description: "Assistência técnica, Implantação de Sistemas, Processos de Manutenção Industrial e Locação de Impressoras e Multifuncionais."
     }, 
     {
-      icon: <FileChart className="h-12 w-12 text-primary" />,
+      icon: <FileChartPie className="h-12 w-12 text-primary" />,
       title: "Sistema de Gestão (ERP)",
       description: "Sistema completo de gestão para pequenas e médias empresas, com foco no controle de estoque, vendas, PDV e finanças."
     },
@@ -146,7 +145,7 @@ const ServicesSection = () => {
             </div>
             <div className="md:w-2/3">
               <div className="flex items-center gap-3 mb-4">
-                <FileChart className="h-8 w-8 text-[#7CFFA0]" />
+                <FileChartPie className="h-8 w-8 text-[#7CFFA0]" />
                 <h3 className="text-2xl font-bold">Sistema de Gestão Empresarial (ERP)</h3>
               </div>
               <p className="text-gray-700 mb-6">
