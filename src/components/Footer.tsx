@@ -13,21 +13,21 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gradient-to-b from-secondary-foreground to-secondary-foreground/95 text-white py-16">
+    <footer className="bg-gray-50 text-gray-700 py-16">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           <div className="space-y-5">
             <div className="flex items-center mb-4">
               <img 
                 alt="Sertinfo Logo" 
-                className="h-12 w-auto mr-3 filter brightness-110" 
+                className="h-12 w-auto mr-3" 
                 src="/lovable-uploads/05440ee2-defe-48c8-a194-4373f6106bf4.png" 
               />
               <h3 className="text-xl font-bold">
                 <span className="text-primary">Sertinfo</span> Tecnologia
               </h3>
             </div>
-            <p className="text-white/90 max-w-xs leading-relaxed">
+            <p className="text-gray-600 max-w-xs leading-relaxed">
               Soluções em tecnologia que otimizam processos, aliam facilidade de operação, 
               inteligência e alta conectividade.
             </p>
@@ -58,7 +58,7 @@ const Footer = () => {
 
           <div>
             <h4 className="text-lg font-semibold mb-5 text-primary">Contato</h4>
-            <ul className="space-y-4 text-white/90">
+            <ul className="space-y-4 text-gray-600">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
                 <span>(71) 99669-5990</span>
@@ -78,10 +78,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="border-white/15 my-10" />
+        <hr className="border-gray-200 my-10" />
 
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/80 text-sm">
+          <p className="text-gray-500 text-sm">
             © {currentYear} Sertinfo Tecnologia. Todos os direitos reservados.
           </p>
           <div className="mt-6 md:mt-0">
@@ -109,7 +109,7 @@ const FooterNavItem = ({ href, children }: FooterNavItemProps) => (
   <li>
     <a 
       href={href} 
-      className="text-white/80 hover:text-primary transition-colors duration-300 flex items-center"
+      className="text-gray-600 hover:text-primary transition-colors duration-300 flex items-center"
     >
       <span className="hover:translate-x-1 transition-transform duration-300">{children}</span>
     </a>
