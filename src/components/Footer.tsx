@@ -1,5 +1,6 @@
+
 import { Button } from '@/components/ui/button';
-import { ChevronUp, Mail, Phone, MapPin } from 'lucide-react';
+import { ChevronUp, Mail, Phone, MapPin, FileText, Shield } from 'lucide-react';
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -64,6 +65,31 @@ const Footer = () => {
                 Segunda a Sexta, 8h às 18h
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Documentos e Políticas */}
+        <div className="mt-10">
+          <h4 className="text-lg font-semibold mb-4 text-primary">Documentos</h4>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a 
+              href="https://politica.sertinfo.com.br/termo-garantia.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
+            >
+              <FileText className="h-4 w-4" />
+              <span>Termo de Garantia dos Produtos</span>
+            </a>
+            <a 
+              href="https://politica.sertinfo.com.br/politica.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
+            >
+              <Shield className="h-4 w-4" />
+              <span>Política de Segurança da Informação</span>
+            </a>
           </div>
         </div>
 
