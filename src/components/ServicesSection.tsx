@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Server, Wifi, Monitor, Shield, Phone, Database, FileChartPie } from 'lucide-react';
@@ -122,6 +123,63 @@ const ServicesSection = () => {
           </div>
         </div>
 
+        {/* Destaque para Telefonia IP - PACO */}
+        <div className="p-6 bg-gradient-to-r from-[#e6eef8] to-[#f0f5fa] rounded-xl shadow-md mb-16 animate-slide-in-right">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/3">
+              <img alt="Paco Telefonia IP" className="w-full max-w-[300px] mx-auto" src="/lovable-uploads/dc355663-57a6-4d32-9a12-15824a1bf6c8.png" />
+            </div>
+            <div className="md:w-2/3">
+              <div className="flex items-center gap-3 mb-4">
+                <Phone className="h-8 w-8 text-[#3066BE]" />
+                <h3 className="text-2xl font-bold">Sistema de Telefonia em Nuvem</h3>
+              </div>
+              <p className="text-gray-700 mb-6">
+                Reduza seus custos de Telefonia e tenha autonomia e flexibilidade com nossa 
+                <span className="font-semibold"> Plataforma de Telefonia em Nuvem</span> que funciona 100% em IP, 
+                com funcionalidade em qualquer lugar. Inclui gravação de voz e URA com configuração personalizada para sua empresa.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+                <div className="flex items-center gap-2">
+                  <div className="bg-[#3066BE]/20 p-1 rounded-full">
+                    <span className="text-[#3066BE] text-sm">✓</span>
+                  </div>
+                  <span className="text-gray-700 text-sm">Telefonia 100% IP</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="bg-[#3066BE]/20 p-1 rounded-full">
+                    <span className="text-[#3066BE] text-sm">✓</span>
+                  </div>
+                  <span className="text-gray-700 text-sm">Plano com PABX</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="bg-[#3066BE]/20 p-1 rounded-full">
+                    <span className="text-[#3066BE] text-sm">✓</span>
+                  </div>
+                  <span className="text-gray-700 text-sm">URA customizado</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="bg-[#3066BE]/20 p-1 rounded-full">
+                    <span className="text-[#3066BE] text-sm">✓</span>
+                  </div>
+                  <span className="text-gray-700 text-sm">Fixo Brasil: Ilimitado</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="bg-[#3066BE]/20 p-1 rounded-full">
+                    <span className="text-[#3066BE] text-sm">✓</span>
+                  </div>
+                  <span className="text-gray-700 text-sm">Sem fidelidade</span>
+                </div>
+              </div>
+              
+              <a href="https://falepaco.com.br/parceiro/MzY5OTc" target="_blank" rel="noopener noreferrer" className="inline-block py-3 px-8 bg-[#3066BE] hover:bg-[#2755a0] text-white font-medium rounded-full transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-[1.02]">
+                Teste 7 dias grátis
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Cards de serviços */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => <ServiceCard key={index} icon={service.icon} title={service.title} description={service.description} index={index} />)}
@@ -148,3 +206,4 @@ const ServiceCard = ({
     </CardContent>
   </Card>;
 export default ServicesSection;
+
