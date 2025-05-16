@@ -10,6 +10,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import EgestorERP from '@/components/EgestorERP';
+import PacoTelefonia from '@/components/PacoTelefonia';
 import { Helmet } from 'react-helmet';
 
 const Index = () => {
@@ -74,6 +75,7 @@ const Index = () => {
       <AboutSection />
       <ServicesSection />
       <EgestorERP />
+      <PacoTelefonia />
       <PlansSection />
       <TestimonialsSection />
       <ContactSection />
