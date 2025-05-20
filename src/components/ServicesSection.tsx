@@ -1,9 +1,7 @@
-
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Server, Wifi, Monitor, Shield, Phone, Database, FileChartPie } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-
 const ServicesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -60,9 +58,7 @@ const ServicesSection = () => {
           <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 animate-on-scroll">
             Nossos Serviços
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Soluções Completas em Tecnologia
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">Soluções completas em Tecnologia</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
             Oferecemos uma gama completa de serviços de tecnologia e infraestrutura para atender às necessidades 
             específicas do seu negócio.
@@ -126,30 +122,21 @@ const ServicesSection = () => {
 
         {/* Cards de serviços - Ajuste para centralizar Virtualização */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.slice(0, 6).map((service, index) => (
-            <ServiceCard key={index} icon={service.icon} title={service.title} description={service.description} index={index} />
-          ))}
+          {services.slice(0, 6).map((service, index) => <ServiceCard key={index} icon={service.icon} title={service.title} description={service.description} index={index} />)}
           {/* Virtualização Card centralizado */}
           <div className="md:col-span-2 lg:col-span-1 lg:col-start-2">
-            <ServiceCard 
-              icon={services[6].icon} 
-              title={services[6].title} 
-              description={services[6].description} 
-              index={6} 
-            />
+            <ServiceCard icon={services[6].icon} title={services[6].title} description={services[6].description} index={6} />
           </div>
         </div>
       </div>
     </section>;
 };
-
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   index: number;
 }
-
 const ServiceCard = ({
   icon,
   title,
@@ -162,5 +149,4 @@ const ServiceCard = ({
       <p className="text-muted-foreground">{description}</p>
     </CardContent>
   </Card>;
-
 export default ServicesSection;
