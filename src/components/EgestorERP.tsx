@@ -10,9 +10,7 @@ const EgestorERP = () => {
           <span className="inline-block px-4 py-1 bg-[#e0f7ea] text-primary rounded-full text-sm font-medium mb-4">
             Sistema Recomendado
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            Sistema de gestão empresarial
-          </h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">Sistema de Gestão Empresarial</h2>
           <p className="text-lg md:text-xl text-gray-600 font-normal max-w-3xl mx-auto">
             Dobre seus lucros otimizando sua gestão com o Egestor
           </p>
