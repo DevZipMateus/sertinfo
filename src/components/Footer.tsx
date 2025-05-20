@@ -1,6 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { ChevronUp, Mail, Phone, MapPin, FileText, Shield } from 'lucide-react';
+
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -8,19 +9,27 @@ const Footer = () => {
       behavior: 'smooth'
     });
   };
+  
   const currentYear = new Date().getFullYear();
+  
   return <footer className="bg-blue-50 text-gray-700 py-16">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           <div className="space-y-5">
             <div className="flex items-center mb-4">
               <img alt="Sertinfo Logo" src="/lovable-uploads/05440ee2-defe-48c8-a194-4373f6106bf4.png" className="h-24 w-auto mr-3" />
-              
             </div>
             <p className="text-gray-600 max-w-xs leading-relaxed">
               Soluções em tecnologia que otimizam processos, aliam facilidade de operação, 
               inteligência e alta conectividade.
             </p>
+            <div className="mt-6">
+              <img 
+                src="/lovable-uploads/1685c64e-4040-46ad-849a-18ad7caa1e02.png" 
+                alt="Selo PROCON-SP Empresa Verificada" 
+                className="max-w-[160px] h-auto" 
+              />
+            </div>
           </div>
 
           <div>
@@ -52,6 +61,10 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
                 <span>(71) 99669-5990</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-primary" />
+                <span>(71) 3838-8793</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
@@ -108,10 +121,12 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 interface FooterNavItemProps {
   href: string;
   children: React.ReactNode;
 }
+
 const FooterNavItem = ({
   href,
   children
@@ -120,4 +135,5 @@ const FooterNavItem = ({
       <span className="hover:translate-x-1 transition-transform duration-300">{children}</span>
     </a>
   </li>;
+
 export default Footer;

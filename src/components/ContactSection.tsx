@@ -1,8 +1,11 @@
+
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -13,33 +16,48 @@ const ContactSection = () => {
     }, {
       threshold: 0.1
     });
+    
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach(el => observer.observe(el));
+    
     return () => {
       animatedElements.forEach(el => observer.unobserve(el));
     };
   }, []);
-  const contactInfo = [{
-    icon: <Phone className="h-5 w-5 text-primary" />,
-    title: "Telefone",
-    details: "(71) 99669-5990",
-    link: "tel:+5571996695990"
-  }, {
-    icon: <Mail className="h-5 w-5 text-primary" />,
-    title: "E-mail",
-    details: "comercial@sertinfo.com.br",
-    link: "mailto:comercial@sertinfo.com.br"
-  }, {
-    icon: <MapPin className="h-5 w-5 text-primary" />,
-    title: "Endereço",
-    details: "Av. Luiz Tarquínio Pontes, 74, Parque Jockey Clube, Lauro de Freitas/BA",
-    link: "https://maps.google.com"
-  }, {
-    icon: <Clock className="h-5 w-5 text-primary" />,
-    title: "Horário",
-    details: "Segunda a Sexta, 8h às 18h",
-    link: null
-  }];
+  
+  const contactInfo = [
+    {
+      icon: <Phone className="h-5 w-5 text-primary" />,
+      title: "Telefone Celular",
+      details: "(71) 99669-5990",
+      link: "tel:+5571996695990"
+    },
+    {
+      icon: <Phone className="h-5 w-5 text-primary" />,
+      title: "Telefone Fixo",
+      details: "(71) 3838-8793",
+      link: "tel:+557138388793"
+    },
+    {
+      icon: <Mail className="h-5 w-5 text-primary" />,
+      title: "E-mail",
+      details: "comercial@sertinfo.com.br",
+      link: "mailto:comercial@sertinfo.com.br"
+    },
+    {
+      icon: <MapPin className="h-5 w-5 text-primary" />,
+      title: "Endereço",
+      details: "Av. Luiz Tarquínio Pontes, 74, Parque Jockey Clube, Lauro de Freitas/BA",
+      link: "https://maps.google.com"
+    },
+    {
+      icon: <Clock className="h-5 w-5 text-primary" />,
+      title: "Horário",
+      details: "Segunda a Sexta, 8h às 18h",
+      link: null
+    }
+  ];
+  
   return <section id="contact" ref={sectionRef} className="section-padding bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
@@ -73,8 +91,6 @@ const ContactSection = () => {
                   <div className="space-y-6 mb-8">
                     {contactInfo.map((item, index) => <ContactInfoItem key={index} icon={item.icon} title={item.title} details={item.details} link={item.link} />)}
                   </div>
-                  
-                  
                 </div>
                 
                 <div className="flex items-center justify-center">
@@ -101,12 +117,14 @@ const ContactSection = () => {
       </div>
     </section>;
 };
+
 interface ContactInfoItemProps {
   icon: React.ReactNode;
   title: string;
   details: string;
   link: string | null;
 }
+
 const ContactInfoItem = ({
   icon,
   title,
@@ -120,11 +138,14 @@ const ContactInfoItem = ({
         <p className="text-muted-foreground mt-1">{details}</p>
       </div>
     </div>;
+    
   if (link) {
     return <a href={link} className="block hover:text-primary transition-colors">
         {content}
       </a>;
   }
+  
   return content;
 };
+
 export default ContactSection;
