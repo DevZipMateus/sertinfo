@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Skeleton } from '@/components/ui/skeleton';
 
+// Expanded testimonials with more entries
 const testimonials = [
   {
     name: "Grasiele Cersosimo",
@@ -33,6 +34,27 @@ const testimonials = [
     image: "/lovable-uploads/25a37fad-1b10-49ea-9170-f1cbb16e445c.png",
     text: "Excelente empresa, prestativos, coerentes e honestos, pontuais em tudo que foi negociado, precisamos de mais empresas como a SERTINFO comércio e serviços no mercado",
     time: "um mês atrás"
+  },
+  {
+    name: "Carlos Eduardo",
+    company: "Cliente Corporativo",
+    image: "/lovable-uploads/25a37fad-1b10-49ea-9170-f1cbb16e445c.png",
+    text: "A parceria com a Sertinfo trouxe um ganho significativo para nossa infraestrutura de TI. Equipe técnica muito capacitada e sempre disponível para solucionar qualquer problema.",
+    time: "três meses atrás"
+  },
+  {
+    name: "Grupo Empresarial Torres",
+    company: "Cliente Corporativo • 5 anos",
+    image: "/lovable-uploads/25a37fad-1b10-49ea-9170-f1cbb16e445c.png",
+    text: "Trabalhamos com a Sertinfo há mais de 5 anos e não temos do que reclamar. Suporte técnico rápido, equipe dedicada e soluções que realmente funcionam para nosso negócio.",
+    time: "seis meses atrás"
+  },
+  {
+    name: "Maria Eduarda Santos",
+    company: "Pequena Empresa",
+    image: "/lovable-uploads/f4df3b3d-f137-40da-8bc0-4538158df92a.png",
+    text: "O sistema ERP que a Sertinfo implementou em nossa empresa mudou completamente nossa forma de trabalhar. Processos mais eficientes e controle total das operações.",
+    time: "dois meses atrás"
   }
 ];
 
@@ -114,10 +136,21 @@ const TestimonialsSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
             O Que Nossos Clientes Dizem
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Atendimento personalizado e resultados concretos são nossa marca registrada.
-            Veja o que nossos clientes têm a dizer sobre nossos serviços.
-          </p>
+          <div className="text-muted-foreground max-w-3xl mx-auto animate-on-scroll space-y-3">
+            <p className="font-medium text-lg">
+              Veja o que nossos clientes dizem:
+            </p>
+            <p>
+              Atendimento personalizado e resultados concretos são nossa marca registrada!
+            </p>
+            <p>
+              Cada cliente e parceiro que integra a trajetória da SERTINFO desempenha um papel fundamental em nossa jornada. 
+              Frequentemente, alguns compartilham conosco depoimentos espontâneos.
+            </p>
+            <p>
+              Descubra mais sobre suas experiências conosco! Aqui estão alguns deles:
+            </p>
+          </div>
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4">

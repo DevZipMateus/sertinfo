@@ -61,10 +61,10 @@ const Index = () => {
     <div className="overflow-x-hidden">
       <Helmet>
         <title>Sertinfo - Soluções em Tecnologia | Há mais de 20 anos no mercado</title>
-        <meta name="description" content="A SERTINFO cria e implementa soluções que buscam a otimização dos processos de tecnologia, aliando facilidade de operação, inteligência e alta conectividade." />
+        <meta name="description" content="A SERTINFO desenvolve e coloca em prática soluções que visam aprimorar os processos tecnológicos, combinando facilidade de uso, inteligência e elevada conectividade." />
         <meta name="keywords" content="sertinfo, tecnologia, infraestrutura, telecomunicações, informática, soluções em TI, Bahia, Lauro de Freitas" />
         <meta property="og:title" content="Sertinfo - Soluções em Tecnologia" />
-        <meta property="og:description" content="Soluções que buscam a otimização dos processos de tecnologia, aliando facilidade de operação, inteligência e alta conectividade." />
+        <meta property="og:description" content="Soluções que visam aprimorar os processos tecnológicos, combinando facilidade de uso, inteligência e elevada conectividade." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sertinfo.com.br" />
         <meta name="robots" content="index, follow" />

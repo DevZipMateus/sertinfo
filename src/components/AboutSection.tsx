@@ -37,7 +37,7 @@ const AboutSection = () => {
             Experiência e Inovação em Tecnologia
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Mais que uma empresa de tecnologia, somos um parceiro estratégico comprometido com
+            Mais que empresa de tecnologia, somos parceiro estratégico comprometido com
             o crescimento e otimização da sua empresa.
           </p>
         </div>
@@ -48,7 +48,7 @@ const AboutSection = () => {
               <h3 className="text-2xl font-bold mb-4">
                 Conte com a Sertinfo Comércio e Serviços
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 text-justify">
                 Há mais de 20 anos, ajudamos empresas a otimizar seus processos de tecnologia.
                 Nossa abordagem combina expertise técnica com um atendimento personalizado,
                 garantindo soluções que aliam facilidade de operação, inteligência e alta conectividade.
@@ -88,7 +88,7 @@ const AboutSection = () => {
             <AboutCard 
               icon={<Check className="h-10 w-10 text-primary" />}
               title="Diferenciais"
-              description="Experiência de mais de 20 anos, equipe especializada e soluções personalizadas para cada cliente."
+              description="Com mais de 20 anos de experiência, nossa equipe especializada oferece soluções personalizadas para cada cliente."
             />
           </div>
         </div>

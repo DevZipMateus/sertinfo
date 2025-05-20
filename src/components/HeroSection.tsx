@@ -49,8 +49,8 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-foreground/80 mb-4 max-w-2xl mx-auto animate-slide-up [animation-delay:700ms]">
-            A SERTINFO cria e implementa soluções que buscam a otimização dos processos de tecnologia, 
-            aliando facilidade de operação, inteligência e alta conectividade.
+            A SERTINFO desenvolve e coloca em prática soluções que visam aprimorar os processos tecnológicos, 
+            combinando facilidade de uso, inteligência e elevada conectividade.
           </p>
           
           <p className="text-md md:text-lg text-primary font-medium mb-8 animate-slide-up [animation-delay:800ms]">

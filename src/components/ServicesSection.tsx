@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Server, Wifi, Monitor, Shield, Phone, Database, FileChartPie } from 'lucide-react';
@@ -73,12 +74,12 @@ const ServicesSection = () => {
           {/* Coluna da esquerda - Texto e serviços */}
           <div className="w-full md:w-2/5 bg-primary/90 text-white p-8 md:p-12 flex flex-col justify-center animate-slide-in-left">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              A SERTINFO cria e implementa soluções que buscam:
+              A SERTINFO desenvolve e aplica soluções focadas em:
             </h3>
             <p className="mb-8 text-white/90">
-              A otimização dos processos de tecnologia, aliando facilidade de operação, inteligência e alta conectividade.
+              A otimização de processos tecnológicos, combinando simplicidade operacional, inteligência estratégica e avançada conectividade.
             </p>
-            <a href="https://wa.me/5500000000000?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20serviços%20de%20TI" className="inline-block bg-white text-primary px-6 py-3 rounded-md font-medium transition-all hover:bg-white/90 w-fit">
+            <a href="https://wa.me/5571996695990?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20serviços%20de%20TI" className="inline-block bg-white text-primary px-6 py-3 rounded-md font-medium transition-all hover:bg-white/90 w-fit">
               Entrar em contato
             </a>
           </div>
@@ -123,9 +124,20 @@ const ServicesSection = () => {
           </div>
         </div>
 
-        {/* Cards de serviços */}
+        {/* Cards de serviços - Ajuste para centralizar Virtualização */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => <ServiceCard key={index} icon={service.icon} title={service.title} description={service.description} index={index} />)}
+          {services.slice(0, 6).map((service, index) => (
+            <ServiceCard key={index} icon={service.icon} title={service.title} description={service.description} index={index} />
+          ))}
+          {/* Virtualização Card centralizado */}
+          <div className="md:col-span-2 lg:col-span-1 lg:col-start-2">
+            <ServiceCard 
+              icon={services[6].icon} 
+              title={services[6].title} 
+              description={services[6].description} 
+              index={6} 
+            />
+          </div>
         </div>
       </div>
     </section>;
